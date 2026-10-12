@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Slack mock</title>
+<style>
+body{margin:0;font:15px/1.46668 Lato,"Segoe UI",sans-serif;color:#1d1c1d;background:#fff}
+.p-workspace{display:flex;flex-direction:column;width:760px;height:100vh}
+.c-virtual_list{flex:1;overflow:auto}
+.c-message_kit__background{padding:8px 20px}
+.c-message_kit__gutter{display:flex}
+.c-message_kit__gutter__left{width:36px;margin-right:8px;flex:none}
+.c-message_kit__avatar img{width:36px;height:36px;border-radius:4px;background:#e8912d;display:block}
+.c-message_kit__gutter__right{flex:1;min-width:0}
+.c-message__sender_button{font-weight:900;background:none;border:0;padding:0;font:inherit;font-weight:900}
+.c-timestamp{color:#616061;font-size:12px;margin-left:4px}
+.p-rich_text_block{text-align:left}
+.p-rich_text_preformatted{font-family:monospace;background:#f8f8f8;border:1px solid #ddd;padding:8px;white-space:pre}
+.p-rich_text_quote{border-left:4px solid #ddd;padding-left:12px}
+.p-rich_text_quote.bar-before{border-left:0;position:relative;padding-left:16px}
+.p-rich_text_quote.bar-before::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:8px;background:#1264a3}
+.c-reaction_bar{margin-top:4px}
+.c-reaction{border:1px solid #ddd;border-radius:12px;padding:0 6px;font-size:12px}
+.p-message_pane_input{border:1px solid #888;border-radius:8px;margin:12px 20px;padding:8px}
+.ql-editor{min-height:22px;outline:none}
+.ql-editor p{margin:0}
+.ql-placeholder{color:#888;position:absolute;pointer-events:none}
+</style></head>
+<body>
+<div class="p-workspace">
+  <div class="c-virtual_list" id="list"></div>
+  <div class="p-message_pane_input">
+    <div data-qa="message_input" class="c-texty_input_unstyled" style="position:relative">
+      <div class="ql-editor" contenteditable="true" id="editor"><p><br></p></div>
+    </div>
+  </div>
+</div>
+<script>
+function msg(id, name, blocksHtml){
+  return `<div class="c-virtual_list__item" data-id="${id}"><div class="c-message_kit__background"><div class="c-message_kit__gutter">
+   <div class="c-message_kit__gutter__left"><button class="c-message_kit__avatar"><img alt=""></button></div>
+   <div class="c-message_kit__gutter__right">
+    <span class="c-message__sender"><button class="c-message__sender_button">${name}</button></span><a class="c-timestamp">2:30 PM</a>
+    <div class="c-message_kit__blocks c-message_kit__blocks--rich_text"><div class="c-message__message_blocks"><div class="p-block_kit_renderer"><div class="p-block_kit_renderer__block_wrapper"><div class="p-rich_text_block" dir="auto" data-qa="message-text">${blocksHtml}</div></div></div></div></div>
+    <div class="c-reaction_bar"><button class="c-reaction">👍 2</button></div>
+   </div></div></div></div>`;
+}
+const sec = t => `<div class="p-rich_text_section">${t}</div>`;
+window.MESSAGES = {
+  arabic:     sec("مرحبا بالجميع، كيف حالكم اليوم؟"),
+  english:    sec("Hello everyone, the deploy is done."),
+  mixedArFirst: sec("مرحبا team، الاجتماع الساعة 3 بعد الظهر في Zoom"),
+  mixedEnFirstMostlyAr: sec("Hi يا جماعة كيف حالكم اليوم، هل انتهيتم من المهمة"),
+  mixedEnMostly: sec("Meeting at 3pm tomorrow in the big room مع أحمد"),
+  emojiFirst: sec("🎉 تم نشر النسخة الجديدة"),
+  mentionFirst: sec('<span class="c-member_slug">@Ahmed</span> شكرا على المساعدة'),
+  arabicWithCode: sec("استخدم هذا الأمر:") + '<pre class="p-rich_text_preformatted">npm run build -- --prod</pre>',
+  arabicList: '<ul class="p-rich_text_list"><li>النقطة الأولى</li><li>النقطة الثانية</li></ul>',
+  twoLines: sec("السطر الأول بالعربية") + sec("Second line in English"),
+  quote: '<blockquote class="p-rich_text_quote">اقتباس من رسالة سابقة</blockquote>',
+  quoteBefore: '<blockquote class="p-rich_text_quote bar-before">اقتباس بشريط جانبي مرسوم</blockquote>',
+  quoteEnglish: '<blockquote class="p-rich_text_quote">An English quote stays put</blockquote>',
+  urlFirst: sec('<a class="c-link" href="#">https://example.com/docs/release-notes/2026</a> شوفوا الرابط يا جماعة'),
+  longMention: sec('<span class="c-member_slug">@Jonathan.Richardson-Marketing</span> شكرا لك'),
+  emojiCode: sec('<span class="c-emoji"><img alt=":tada:"></span> مبروك للجميع'),
+  arabicMention: sec('<span class="c-member_slug">@أحمد</span> شكرا يا صديقي'),
+  persian: sec("سلام دوستان، امروز جلسه داریم"),
+};
+const list = document.getElementById("list");
+window.render = (keys) => { list.innerHTML = keys.map(k => msg(k, k === "english" ? "Sam" : "أحمد", MESSAGES[k])).join(""); };
+window.append = (key, id) => list.insertAdjacentHTML("beforeend", msg(id || key, "Late", MESSAGES[key]));
+render(Object.keys(MESSAGES));
+</script>
+</body></html>

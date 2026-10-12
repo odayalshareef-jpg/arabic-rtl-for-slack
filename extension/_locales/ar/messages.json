@@ -1,0 +1,59 @@
+{
+  "textDirection": {
+    "message": "rtl",
+    "description": "ltr or rtl, the reading direction of this language"
+  },
+  "extName": {
+    "message": "العربية من اليمين لليسار في Slack"
+  },
+  "extDescription": {
+    "message": "يعرض الرسائل العربية وخانة الكتابة من اليمين لليسار في Slack على المتصفح، دون تحريك الأسماء والصور والأوقات والتفاعلات."
+  },
+  "switchLabel": {
+    "message": "اتجاه من اليمين لليسار للعربية"
+  },
+  "statusOn": {
+    "message": "مفعّل: الرسائل العربية تظهر من اليمين"
+  },
+  "statusOff": {
+    "message": "متوقف: تنسيق Slack الافتراضي"
+  },
+  "loading": {
+    "message": "جارٍ التحميل…"
+  },
+  "openSlack": {
+    "message": "افتح Slack على app.slack.com لاستخدام الإضافة."
+  },
+  "reloadTab": {
+    "message": "أعد تحميل صفحة Slack لتعمل الإضافة فيها."
+  },
+  "offOnTab": {
+    "message": "متوقفة في هذه الصفحة."
+  },
+  "notFound": {
+    "message": "لم نجد رسائل Slack أو خانة الكتابة. ربما غيّر Slack صفحته، والإضافة تحتاج إلى تحديث."
+  },
+  "found": {
+    "message": "هذه الصفحة: $BLOCKS$ فقرة رسائل، منها $RTL$ من اليمين لليسار.",
+    "placeholders": {
+      "blocks": {
+        "content": "$1"
+      },
+      "rtl": {
+        "content": "$2"
+      }
+    }
+  },
+  "composerFound": {
+    "message": "تم العثور على خانة الكتابة."
+  },
+  "composerMissing": {
+    "message": "لم يتم العثور على خانة الكتابة."
+  },
+  "footer": {
+    "message": "التغييرات تُطبّق فورًا على صفحات Slack المفتوحة."
+  },
+  "support": {
+    "message": "أعجبتك؟ ادعم هذه الإضافة"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "textDirection": {
+    "message": "ltr",
+    "description": "ltr or rtl, the reading direction of this language"
+  },
+  "extName": {
+    "message": "Arabic RTL for Slack"
+  },
+  "extDescription": {
+    "message": "Shows Arabic messages and the message box right-to-left in Slack on the web. Names, avatars, timestamps and reactions stay put."
+  },
+  "switchLabel": {
+    "message": "Right-to-left for Arabic"
+  },
+  "statusOn": {
+    "message": "On: Arabic messages align right"
+  },
+  "statusOff": {
+    "message": "Off: Slack's default layout"
+  },
+  "loading": {
+    "message": "Loading…"
+  },
+  "openSlack": {
+    "message": "Open Slack at app.slack.com to use this."
+  },
+  "reloadTab": {
+    "message": "Reload the Slack tab to start the extension there."
+  },
+  "offOnTab": {
+    "message": "Off on this tab."
+  },
+  "notFound": {
+    "message": "Can't find Slack's messages or message box. Slack may have changed its page; the extension needs an update."
+  },
+  "found": {
+    "message": "This tab: $BLOCKS$ message paragraphs found, $RTL$ set right-to-left.",
+    "placeholders": {
+      "blocks": {
+        "content": "$1"
+      },
+      "rtl": {
+        "content": "$2"
+      }
+    }
+  },
+  "composerFound": {
+    "message": "Message box found."
+  },
+  "composerMissing": {
+    "message": "Message box not found."
+  },
+  "footer": {
+    "message": "Changes apply to open Slack tabs right away."
+  },
+  "support": {
+    "message": "Like it? Support this extension"
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Arabic RTL for Slack</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="36" height="36">
+    <div>
+      <h1 data-i18n="extName">Arabic RTL for Slack</h1>
+      <span id="version" class="version"></span>
+    </div>
+  </header>
+
+  <main>
+    <label class="card toggle-row" for="enabled">
+      <span class="toggle-text">
+        <strong data-i18n="switchLabel">Right-to-left for Arabic</strong>
+        <small id="status-text" data-i18n="loading">Loading…</small>
+      </span>
+      <span class="switch">
+        <input type="checkbox" id="enabled" role="switch">
+        <span class="slider"></span>
+      </span>
+    </label>
+
+    <div id="page-status" class="status idle" aria-live="polite">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="page-status-text"></span>
+    </div>
+  </main>
+
+  <footer>
+    <span data-i18n="footer">Changes apply to open Slack tabs right away.</span>
+    <a id="support" class="support" href="#" target="_blank" rel="noopener" hidden>
+      <span aria-hidden="true">♥</span> <span data-i18n="support">Like it? Support this extension</span>
+    </a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
