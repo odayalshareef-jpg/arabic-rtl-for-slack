@@ -104,7 +104,7 @@ The extension has to read the text of messages and the message box on app.slack.
 
 **Data usage:** tick none of the data types. Then tick all three certifications (no selling or transfer of data, no use unrelated to the single purpose, no use for creditworthiness or lending).
 
-**Privacy policy URL:** https://odayalshareef-jpg.github.io/arabic-rtl-for-slack/
+**Privacy policy URL:** https://github.com/odayalshareef-jpg/arabic-rtl-for-slack/blob/main/PRIVACY.md
 
 **Support / homepage URL:** https://github.com/odayalshareef-jpg/arabic-rtl-for-slack
 

@@ -13,7 +13,7 @@ A free Chrome extension that shows Arabic messages and the message box right-to-
 | `extension/` | The extension itself. Load this folder in `chrome://extensions` with **Load unpacked**. See [extension/README.md](extension/README.md) |
 | `tests/` | Direction tests (`node unit.js`) and browser tests on a Slack-like page (`node run.js`, needs Playwright) |
 | `store-listing/` | Chrome Web Store text in English and Arabic, screenshots, promo images and the logo |
-| `docs/` | The privacy policy, published at https://odayalshareef-jpg.github.io/arabic-rtl-for-slack/ |
+| `PRIVACY.md` | The privacy policy (https://github.com/odayalshareef-jpg/arabic-rtl-for-slack/blob/main/PRIVACY.md). `docs/` holds the same page as HTML, for GitHub Pages if you turn it on. |
 
 ## Privacy
 
